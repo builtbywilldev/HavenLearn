@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import CompanionCard from '@/components/CompanionCard'
 import CompanionsList from '@/components/CompanionsList'
 import CTA from '@/components/CTA'
+import { recentSessions } from '@/constants'
 
 const Page = () => {
   return (
@@ -21,7 +22,7 @@ const Page = () => {
           id="456"
           name="Harry the Number Wizard"
           topic='Linear Algebra'
-          subject='Math'
+          subject='Mathematics'
           duration={30}
           color='#e5d0ff'
         />
@@ -36,7 +37,11 @@ const Page = () => {
        </section>
 
         <section className="home-section">
-          <CompanionsList />
+          <CompanionsList 
+            title='Recently Completed Sessions'
+            companions={recentSessions}
+            classNames="w-2/3 max-lg:w:full"
+          />
           <CTA />
         </section>
 
