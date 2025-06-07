@@ -27,20 +27,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider appearance={{variables: {colorPrimary: '#fe5933'} }}>
       <html lang="en">
         <body className={`${bricolage.variable} antialiased`}>
           <header>
             <Navbar />
-            <div className="flex justify-end p-4">
-              <SignedOut>
-                <SignInButton />
-                <SignUpButton className="ml-4" />
-              </SignedOut>
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
-            </div>
+            
           </header>
           {children}
         </body>
