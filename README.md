@@ -1,60 +1,65 @@
 # ⚡ SaaS-Learning-App
 
-Full-featured SaaS starter built with React. Includes secure auth, payment integration, AI features, and a clean responsive UI.
-
-This isn’t a template — this is a **training ground** for building production-ready SaaS apps with modern frontend discipline.
+A full-stack SaaS starter powered by **Clerk**, **Stripe**, and **Supabase**.  
+Designed as a tactical training ground — not a template — to master real production-ready frontend systems.
 
 ---
 
 ## 🧩 Features
 
-- ✅ User Authentication (login + register flow)
-- 💸 Stripe Payment Integration
-- 🤖 AI Feature Module (API-connected or local-ready)
-- 🧠 Dashboard UI with conditional rendering
-- 🌙 Dark Mode Ready
-- 🔐 Protected Routes + Access Control
-- 📦 Organized File Structure for Scaling
+- ✅ **Clerk Authentication** — smooth login/register + fallback handling  
+- ✅ **Clerk-Stripe Billing** — clean and working billing portal  
+- ✅ **User Profiles** — Clerk-powered profile cards, styled and responsive  
+- ✅ **Session UI** — Recent Sessions table with dynamic companion cards  
+- ✅ **Fallback Mode** — gracefully handles guest users  
+- 🚧 **Vapi AI Lessons** — not yet integrated  
+- 🚧 **Bookmarks / Save for Later** — schema not implemented yet  
+- 🚀 **Deploy-Ready** — Vercel or Netlify in one click
 
 ---
 
 ## 🧰 Tech Stack
 
-- **Frontend**: React, JavaScript (ES6+), Vite
-- **Styling**: CSS Modules / Tailwind *(edit based on your setup)*
-- **Backend Services**: Appwrite / Supabase *(if used — update if needed)*
-- **Payments**: Stripe
-- **AI**: Custom API or OpenAI (if applicable)
-- **Deployment**: Vercel / Netlify *(coming soon?)*
+- **Frontend**: React (Next.js 13+ with App Router) + TypeScript  
+- **Styling**: Tailwind CSS + ShadCN UI  
+- **Auth**: [Clerk.dev](https://clerk.dev)  
+- **Payments**: Clerk ↔️ Stripe integration  
+- **Database**: Supabase (for lesson/session data)  
+- **AI (Planned)**: Vapi voice + optional OpenAI fallback  
+- **Deployment**: Vercel (recommended)
 
 ---
 
-
 ## 📅 Roadmap
 
-- [x] Auth system  
-- [x] Dashboard layout  
-- [x] AI module  
-- [ ] Full test suite  
-- [ ] Admin view  
-- [ ] Live demo deployment  
+- [x] Clerk Auth  
+- [x] Stripe Billing  
+- [x] Supabase session structure  
+- [x] User dashboard / profile logic  
+- [ ] Vapi AI integration  
+- [ ] Bookmark schema + save logic  
+- [ ] Admin dashboard  
+- [ ] Full test coverage  
+- [x] Live demo deployment
 
+---
 
-🔖 License
+## 🔖 License
 
-MIT for structure — all logic and design original.
+MIT for structure — logic, layout, and UX custom-built.  
 © BuiltByWill — 2025.
-🙋‍♂️ Who Built This?
 
-I’m William Brown — a frontend dev obsessed with fast UIs, secure logic, and terminal-level control.
+---
 
-    I don’t run apps — I host realities.
+## 🙋‍♂️ Who Built This?
 
-📬 WNBrown@builtbywill.dev
-🌐 www.builtbywill.dev
-🐦 @builtbywill21
+I’m William Brown — a frontend dev building fast UIs, secure logic, and scalable offline-first systems.
 
+📬 WNBrown@builtbywill.dev  
+🌐 [builtbywill.dev](https://builtbywill.dev)  
+𝕏 [@builtbywill](https://x.com/builtbywill)
 
-Let me know your current tech (Tailwind? Appwrite?) and I’ll adapt the stack section precisely.  
-Once that’s in, this README is a **10/10 recruiter+dev-friendly drop.**
+---
 
+**Command accepted.**  
+Push it. Deploy it. Let them see what a real build looks like.

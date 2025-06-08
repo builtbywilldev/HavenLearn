@@ -4,6 +4,7 @@ import SubjectFilter from "@/components/SubjectFilter";
 import { getAllCompanions } from "@/lib/actions/companion.actions";
 import { getSubjectColor } from "@/lib/utils";
 
+
 const CompanionsLibrary = async ({ searchParams }: SearchParams) => {
 
     const filters = await searchParams;
