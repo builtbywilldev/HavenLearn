@@ -3,7 +3,6 @@ import Image from "next/image";
 import NavItems from "./NavItems";
 import {
   SignInButton,
-  SignUpButton,
   SignedIn,
   SignedOut,
   UserButton,

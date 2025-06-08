@@ -1,7 +1,6 @@
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -18,7 +17,6 @@ interface CompanionsListProps {
 }
 
 const CompanionsList = ({
-  title,
   companions,
   classNames,
 }: CompanionsListProps) => {
@@ -44,8 +42,9 @@ const CompanionsList = ({
               justify-center rounged-lg max-md:hidden"
                       style={{ backgroundColor: getSubjectColor(subject) }}
                     >
-                      <img
+                      <Image
                         src={`/icons/${subject}.svg`}
+                        alt=""
                         width={35}
                         height={35}
                       />

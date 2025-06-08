@@ -1,7 +1,7 @@
 'use client';
 
 import {useEffect, useRef, useState} from 'react'
-import {cn, configureAssistant, getSubjectColor} from "@/lib/utils";
+import {cn, getSubjectColor} from "@/lib/utils";
 import {vapi} from "@/lib/vapi.sdk";
 import Image from "next/image";
 import Lottie, {LottieRefCurrentProps} from "lottie-react";
@@ -17,7 +17,7 @@ enum CallStatus {
 }
 
 
-const CompanionComponent = ({ companionId, subject, topic, name, userName, userImage, style, voice }: CompanionComponentProps) => {
+const CompanionComponent = ({ companionId, subject, name, userName, userImage, style, voice }: CompanionComponentProps) => {
     const [callStatus, setCallStatus] = useState<CallStatus>(CallStatus.INACTIVE);
     const [isSpeaking, setIsSpeaking] = useState(false);
     const [isMuted, setIsMuted] = useState(false);
@@ -35,7 +35,7 @@ const CompanionComponent = ({ companionId, subject, topic, name, userName, userI
                 lottieRef.current?.stop()
             }
         }
-    }, [isSpeaking, lottieRef])
+    }, [isSpeaking])
 
     useEffect(() => {
         const onCallStart = () => setCallStatus(CallStatus.ACTIVE);
@@ -54,12 +54,7 @@ const CompanionComponent = ({ companionId, subject, topic, name, userName, userI
 
         const onSpeechStart = () => setIsSpeaking(true);
         const onSpeechEnd = () => setIsSpeaking(false);
-        const assistantOverrides = {
-            variableValues: { subject, topic, style },
-            clientMessages: ['transcript'],
-            serverMessages: [],
-            };
-
+      
         const onError = (error: Error) => console.log('Error', error);
          
 
@@ -78,7 +73,7 @@ const CompanionComponent = ({ companionId, subject, topic, name, userName, userI
             vapi.off('speech-start', onSpeechStart);
             vapi.off('speech-end', onSpeechEnd);
         }
-    }, []);
+    }, [companionId]);
 
     const toggleMicrophone = () => {
         const isMuted = vapi.isMuted();
@@ -90,7 +85,7 @@ const CompanionComponent = ({ companionId, subject, topic, name, userName, userI
         setCallStatus(CallStatus.CONNECTING)
 
       
-         //@ts-ignore
+// @ts-expect-error: suppressing type error for assistant message structure mismatch
         vapi.start(configureAssistant(voice, style), assistantOverrides)
     }
 
